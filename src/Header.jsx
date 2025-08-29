@@ -1,101 +1,101 @@
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
-export default function Header({ type })
+export default function Header()
 {
-    if (type === "home")
+    const { pathname } = useLocation();
+    const isResume = pathname === "/resume";
+
+    // Theme state (persist + reflect on <html>)
+    const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
+    useEffect(() =>
     {
-        return (
-            <header>
-                <nav className="navbar">
-                    <div className="container">
-                        {/* Logo */}
-                        <h1 id="logo">
-                            <a href="/">
-                                <img src="/assets/logo.png" alt="Your Logo" />
-                            </a>
-                        </h1>
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
 
-                        {/* NavBarLinks */}
-                        <ul className="nav-menu">
-                            <li><a className="nav-link" href="#projects">PROJECTS</a></li>
-                            <li><a className="nav-link" href="#footer">CONTACT</a></li>
-                            <li>
+    // Mobile menu
+    const [menuOpen, setMenuOpen] = useState(false);
+    const toggleMenu = () => setMenuOpen((v) => !v);
+    const closeMenu = () => setMenuOpen(false);
 
-                                <NavLink
-                                    to="/resume"
-                                    className="nav-link btn btn-primary"
-                                >
-                                    RESUME <i className="fas fa-arrow-right" />
-                                </NavLink>
+    // Shared bits
+    const Logo = (
+        <h1 id="logo">
+            <NavLink to="/" onClick={closeMenu}>
+                <img src="/assets/logo.png" alt="Your Logo" />
+            </NavLink>
+        </h1>
+    );
 
-                            </li>
+    const ThemeSwitch = (
+        <li className="theme-switch">
+            <input
+                type="checkbox"
+                id="theme-switch"
+                checked={theme === "dark"}
+                onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+            />
+            <label className="toggle-icons" htmlFor="theme-switch" title="Toggle theme">
+                <img className="moon" src="/assets/moon.svg" alt="moon" />
+                <img className="sun" src="/assets/sun.svg" alt="sun" />
+            </label>
+        </li>
+    );
 
-                            {/* Toggle Switch */}
-                            <div className="theme-switch">
-                                <input type="checkbox" id="switch" />
-                                <label className="toggle-icons" htmlFor="switch">
-                                    <img className="moon" src="/assets/moon.svg" alt="moon" />
-                                    <img className="sun" src="/assets/sun.svg" alt="sun" />
-                                </label>
-                            </div>
-                        </ul>
+    return (
+        <header>
+            <nav className="navbar">
+                <div className="container">
+                    {Logo}
 
-                        {/* Hamburger Menu */}
-                        <div className="hamburger">
-                            <span className="bar" />
-                            <span className="bar" />
-                            <span className="bar" />
-                        </div>
-                    </div>
-                </nav>
-            </header>
-        )
-    }
-    if (type === "resume")
-    {
-        return (
-            <header>
-                <nav className="navbar">
-                    <div className="container">
-                        {/* Logo */}
-                        <h1 id="logo">
-                            <a href="/">
-                                <img src="/assets/logo.png" alt="Your Logo" />
-                            </a>
-                        </h1>
+                    {/* Menu */}
+                    <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
+                        {!isResume ? (
+                            <>
+                                <li><a className="nav-link" href="#projects" onClick={closeMenu}>PROJECTS</a></li>
+                                <li><a className="nav-link" href="#footer" onClick={closeMenu}>CONTACT</a></li>
+                                <li>
+                                    <NavLink
+                                        to="/resume"
+                                        className="nav-link btn btn-primary"
+                                        onClick={closeMenu}
+                                    >
+                                        RESUME <i className="fas fa-arrow-right" />
+                                    </NavLink>
+                                </li>
+                                {ThemeSwitch}
+                            </>
+                        ) : (
+                            <>
+                                <li>
+                                    <NavLink
+                                        to="/"
+                                        className="nav-link btn btn-primary"
+                                        onClick={closeMenu}
+                                    >
+                                        Back <i className="fas fa-arrow-right" />
+                                    </NavLink>
+                                </li>
+                                {ThemeSwitch}
+                            </>
+                        )}
+                    </ul>
 
-                        {/* NavBarLinks */}
-                        <ul className="nav-menu">
-                            <li>
-
-                                <NavLink
-                                    to="/"
-                                    className="nav-link btn btn-primary"
-                                >
-                                    Back <i className="fas fa-arrow-right" />
-                                </NavLink>
-
-                            </li>
-
-                            {/* Toggle Switch */}
-                            <div className="theme-switch">
-                                <input type="checkbox" id="switch" />
-                                <label className="toggle-icons" htmlFor="switch">
-                                    <img className="moon" src="/assets/moon.svg" alt="moon" />
-                                    <img className="sun" src="/assets/sun.svg" alt="sun" />
-                                </label>
-                            </div>
-                        </ul>
-
-                        {/* Hamburger Menu */}
-                        <div className="hamburger">
-                            <span className="bar" />
-                            <span className="bar" />
-                            <span className="bar" />
-                        </div>
-                    </div>
-                </nav>
-            </header>)
-    }
-
+                    {/* Hamburger */}
+                    <button
+                        className={`hamburger ${menuOpen ? "active" : ""}`}
+                        aria-label="Toggle menu"
+                        aria-expanded={menuOpen}
+                        onClick={toggleMenu}
+                        type="button"
+                    >
+                        <span className="bar" />
+                        <span className="bar" />
+                        <span className="bar" />
+                    </button>
+                </div>
+            </nav>
+        </header>
+    );
 }

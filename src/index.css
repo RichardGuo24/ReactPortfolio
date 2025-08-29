@@ -500,3 +500,36 @@ h2::selection {
     font-size: 2.5rem;
   }
 }
+
+/* Hide the native checkbox */
+.theme-switch input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Make the label act as the visible toggle */
+.theme-switch .toggle-icons {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Optional: show/hide moon/sun depending on checked state */
+.theme-switch input[type="checkbox"]:checked+.toggle-icons .moon {
+  display: none;
+}
+
+.theme-switch input[type="checkbox"]:checked+.toggle-icons .sun {
+  display: inline;
+}
+
+.theme-switch input[type="checkbox"]:not(:checked)+.toggle-icons .moon {
+  display: inline;
+}
+
+.theme-switch input[type="checkbox"]:not(:checked)+.toggle-icons .sun {
+  display: none;
+}

@@ -1,6 +1,10 @@
 // src/Home.jsx
+import { useEffect } from "react"
+
+
 export default function Home()
 {
+
     return (
         <>
             <div id="hero">
@@ -45,7 +49,7 @@ export default function Home()
                     </a>
 
                     {/* Project 2 */}
-                    <div className="card">
+                    <a className="card" href="https://wordlepractice.vercel.app/" target="_blank" rel="noreferrer">
                         <div className="project-info">
                             <div className="project-bio">
                                 <h3>Wordle AI Solver</h3>
@@ -53,10 +57,10 @@ export default function Home()
                             </div>
                             <div className="project-link">
                                 <a href="https://github.com/RichardGuo24/WordleBotPractice" target="_blank" rel="noreferrer"><i className="fab fa-github" /></a>
-                                <a href="#" target="_blank" rel="noreferrer"><i className="fas fa-globe" /></a>
+                                <a href="https://wordlepractice.vercel.app/" target="_blank" rel="noreferrer"><i className="fas fa-globe" /></a>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                     {/* Project 3 */}
                     <div className="card">
