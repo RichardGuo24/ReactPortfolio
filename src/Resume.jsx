@@ -1,9 +1,10 @@
+import resumePDF from './assets/resume.pdf'
+
 export default function Resume()
 {
     return (
         <section id="resume" className="container" style={{ padding: "4rem 0" }}>
             <h2 style={{ marginTop: "1rem" }}>Resume</h2>
-
             <div
                 style={{
                     position: "relative",
@@ -18,7 +19,7 @@ export default function Resume()
                 }}
             >
                 <iframe
-                    src="/assets/resume.pdf#view=FitH"
+                    src={`${resumePDF}#view=FitH`}
                     title="Richard Guo – Resume"
                     style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
                 />

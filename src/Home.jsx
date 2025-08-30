@@ -1,5 +1,15 @@
 // src/Home.jsx
 import { useEffect } from "react"
+import linkedinIcon from './assets/linkedin-icon.svg';
+import githubIcon from './assets/github-icon.svg';
+import squarepfp from './assets/squarepfp.png'
+
+import SplitText from "./SplitText";
+
+const handleAnimationComplete = () =>
+{
+    console.log('All letters have animated!');
+};
 
 
 export default function Home()
@@ -10,12 +20,24 @@ export default function Home()
             <div id="hero">
                 {/* Navbar */}
                 <section className="header-container">
-                    <img className="profile-image" src="/assets/squarepfp.png" alt="Profile" />
+                    <img className="profile-image" src={squarepfp} alt="Profile" />
                     <h1>Hi I&apos;m Richard Guo</h1>
-
+                    <SplitText
+                        text={`Exploring AI,\nEngineering "Fun" Applications`}
+                        delay={100}
+                        duration={0.6}
+                        ease="power3.out"
+                        splitType="chars"
+                        from={{ opacity: 0, y: 40 }}
+                        to={{ opacity: 1, y: 0 }}
+                        threshold={0.1}
+                        rootMargin="-100px"
+                        textAlign="center"
+                        tag="p"
+                        style={{ fontSize: "3rem", fontWeight: "bold", color: "black", whiteSpace: "pre-line", display: "block" }}
+                        onLetterAnimationComplete={handleAnimationComplete}
+                    />
                     <div className="content-text">
-                        <h2>Exploring AI,</h2>
-                        <h2>Engineering &quot;Fun&quot; Applications</h2>
                         <p>
                             A computer science student @ Columbia currently working on understanding
                             neural network and full stack development
@@ -85,10 +107,10 @@ export default function Home()
                     {/* Social Links */}
                     <div className="social">
                         <a href="https://linkedin.com/in/richardguo24" target="_blank" rel="noreferrer">
-                            <img src="/assets/linkedin-icon.svg" alt="LinkedIn" />
+                            <img src={linkedinIcon} alt="LinkedIn" />
                         </a>
                         <a href="https://github.com/RichardGuo24" target="_blank" rel="noreferrer">
-                            <img src="/assets/github-icon.svg" alt="GitHub" />
+                            <img src={githubIcon} alt="GitHub" />
                         </a>
                     </div>
                 </div>

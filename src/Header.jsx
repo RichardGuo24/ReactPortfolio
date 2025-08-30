@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
+
+import moon from './assets/moon.svg'
+import sun from './assets/sun.svg'
+import logo from './assets/logo.png'
+
 export default function Header()
 {
     const { pathname } = useLocation();
@@ -23,7 +28,7 @@ export default function Header()
     const Logo = (
         <h1 id="logo">
             <NavLink to="/" onClick={closeMenu}>
-                <img src="/assets/logo.png" alt="Your Logo" />
+                <img src={logo} alt="Your Logo" />
             </NavLink>
         </h1>
     );
@@ -37,8 +42,8 @@ export default function Header()
                 onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
             />
             <label className="toggle-icons" htmlFor="theme-switch" title="Toggle theme">
-                <img className="moon" src="/assets/moon.svg" alt="moon" />
-                <img className="sun" src="/assets/sun.svg" alt="sun" />
+                <img className="moon" src={moon} alt="moon" />
+                <img className="sun" src={sun} alt="sun" />
             </label>
         </li>
     );
