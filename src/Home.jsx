@@ -3,8 +3,8 @@ import { useEffect } from "react"
 import linkedinIcon from './assets/linkedin-icon.svg';
 import githubIcon from './assets/github-icon.svg';
 import squarepfp from './assets/squarepfp.png'
-
 import SplitText from "./SplitText";
+
 
 const handleAnimationComplete = () =>
 {
