@@ -85,7 +85,7 @@ export default function Home()
                     </a>
 
                     {/* Project 3 */}
-                    <div className="card">
+                    <div className="card" href="https://github.com/RichardGuo24/Camel-Up-AI" target="_blank" rel="noreferrer">
                         <div className="project-info">
                             <div className="project-bio">
                                 <h3>Camel Up EV Calculator</h3>
@@ -93,7 +93,7 @@ export default function Home()
                             </div>
                             <div className="project-link">
                                 <a href="https://github.com/RichardGuo24/Camel-Up-AI" target="_blank" rel="noreferrer"><i className="fab fa-github" /></a>
-                                <a href="#" target="_blank" rel="noreferrer"><i className="fas fa-globe" /></a>
+                                {/*<a href="#" target="_blank" rel="noreferrer"><i className="fas fa-globe" /></a>*/}
                             </div>
                         </div>
                     </div>
