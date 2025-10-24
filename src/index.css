@@ -475,7 +475,7 @@ h2::selection {
 
 /* project 1 */
 .card:nth-child(1) {
-  background: url(./assets/project/proteinpilot.png) center center/cover;
+  background: url(./assets/project/rlogo.png) center center/cover;
 }
 
 /* Project 2 */
@@ -485,6 +485,10 @@ h2::selection {
 
 /* Project 3 */
 .card:nth-child(3) {
+  background: url(./assets/project/proteinpilot.png) center center/cover;
+}
+
+.card:nth-child(4) {
   background: url(./assets/project/difcamelup.png) center center/cover;
 }
 

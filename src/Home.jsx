@@ -56,16 +56,18 @@ export default function Home()
                 </div>
 
                 <article className="project">
+
                     {/* Project 1 */}
-                    <a className="card" href="https://proteinpilot.vercel.app/" target="_blank" rel="noreferrer">
+                    <a className="card" href="https://recall-fe-xi.vercel.app/" target="_blank" rel="noreferrer">
                         <div className="project-info">
                             <div className="project-bio">
-                                <h3>Protein Pilot</h3>
-                                <p>React, Node.js, Vercel</p>
+                                <h3>Recall (AI Receptionist)</h3>
+                                <p>Python</p>
                             </div>
                             <div className="project-link">
-                                <a href="https://github.com/RichardGuo24/ProteinPilot" target="_blank" rel="noreferrer"><i className="fab fa-github" /></a>
-                                <a href="https://proteinpilot.vercel.app/" target="_blank" rel="noreferrer"><i className="fas fa-globe" /></a>
+                                <a href="https://github.com/RichardGuo24/Recall-Combined" target="_blank" rel="noreferrer"><i className="fab fa-github" /></a>
+                                <a href="https://recall-fe-xi.vercel.app/" target="_blank" rel="noreferrer"><i className="fas fa-globe" /></a>
+                                {/*<a href="#" target="_blank" rel="noreferrer"><i className="fas fa-globe" /></a>*/}
                             </div>
                         </div>
                     </a>
@@ -85,6 +87,20 @@ export default function Home()
                     </a>
 
                     {/* Project 3 */}
+                    <a className="card" href="https://proteinpilot.vercel.app/" target="_blank" rel="noreferrer">
+                        <div className="project-info">
+                            <div className="project-bio">
+                                <h3>Protein Pilot</h3>
+                                <p>React, Node.js, Vercel</p>
+                            </div>
+                            <div className="project-link">
+                                <a href="https://github.com/RichardGuo24/ProteinPilot" target="_blank" rel="noreferrer"><i className="fab fa-github" /></a>
+                                <a href="https://proteinpilot.vercel.app/" target="_blank" rel="noreferrer"><i className="fas fa-globe" /></a>
+                            </div>
+                        </div>
+                    </a>
+
+                    {/* Project 4 */}
                     <div className="card" href="https://github.com/RichardGuo24/Camel-Up-AI" target="_blank" rel="noreferrer">
                         <div className="project-info">
                             <div className="project-bio">
@@ -97,6 +113,7 @@ export default function Home()
                             </div>
                         </div>
                     </div>
+
                 </article>
             </section>
 
