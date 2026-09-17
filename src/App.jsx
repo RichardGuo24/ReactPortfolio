@@ -93,7 +93,7 @@ export default function App()
                 <header className="header">
                     <div>
                         <h1>Richard Guo</h1>
-                        <p className="dim">CS @ Columbia // AI + Full Stack</p>
+                        <p className="dim">CS @ Columbia</p>
                     </div>
                     <div className="header-side">
                         <div className="phosphor" role="group" aria-label="Screen color">

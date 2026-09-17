@@ -75,9 +75,6 @@ export default function Projects()
                             </li>
                         ))}
                     </ul>
-                    <p className="dim side-note">
-                        &gt; Exploring AI, engineering &ldquo;fun&rdquo; applications.
-                    </p>
                 </div>
 
                 <article className="detail" ref={detailRef}>

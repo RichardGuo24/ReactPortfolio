@@ -1,4 +1,4 @@
-export const RESUME_URL = "/resume.pdf";
+export const RESUME_URL = "/GuoRichardResume.pdf";
 
 export const CONTACTS = [
     { id: "email", label: "Email", value: "rwg2125@columbia.edu", href: "mailto:rwg2125@columbia.edu", action: "Send" },

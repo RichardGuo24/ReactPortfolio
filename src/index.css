@@ -400,11 +400,6 @@ button {
   opacity: 0.7;
 }
 
-.side-note {
-  padding: 0 14px;
-  line-height: 1.25;
-}
-
 .detail {
   display: grid;
   grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
@@ -453,11 +448,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
-
-.motto {
-  font-size: 44px;
-  line-height: 1.05;
 }
 
 /* ---------- Resume ---------- */
@@ -609,7 +599,6 @@ button {
     max-width: 240px;
   }
 
-  .motto,
   .detail-head h2 {
     font-size: 36px;
   }

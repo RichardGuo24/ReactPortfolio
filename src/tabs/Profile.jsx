@@ -16,8 +16,6 @@ export default function Profile({ onNavigate })
             </div>
 
             <div className="profile-body">
-                <p className="motto">Exploring AI, engineering &ldquo;fun&rdquo; applications.</p>
-
                 <dl className="specs">
                     {STATS.map(([label, value]) => (
                         <div key={label}>
